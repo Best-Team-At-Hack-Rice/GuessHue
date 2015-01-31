@@ -40,7 +40,7 @@ public class Round extends ActionBarActivity {
     }
 
     public void dispatchApprovalActivity(View view) {
-        Intent intent = new Intent(this, Round.class);
+        Intent intent = new Intent(this, Approval.class);
         startActivity(intent);
     }
 }
