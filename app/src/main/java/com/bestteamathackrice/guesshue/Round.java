@@ -1,9 +1,11 @@
 package com.bestteamathackrice.guesshue;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Round extends ActionBarActivity {
@@ -35,5 +37,10 @@ public class Round extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void dispatchApprovalActivity(View view) {
+        Intent intent = new Intent(this, Round.class);
+        startActivity(intent);
     }
 }
