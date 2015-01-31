@@ -8,8 +8,8 @@
     <string name="title_activity_approval">Approval</string>
     <string name="title_activity_score">Score</string>
     <string name="title_activity_final_score">FinalScore</string>
-    <string name="button_play">Play Game</string>
-    <string name="high_scores">High Scores</string>
+    <string name="button_play">PLAY GAME</string>
+    <string name="high_scores">HIGH SCORES</string>
     <string name="title_activity_high_scores">HighScores</string>
     <string name="your_color">Your Color</string>
     <string name="user_color_description">The color produced by the user photograph.</string>

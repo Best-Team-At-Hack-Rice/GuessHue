@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 
+
 public class MainActivity extends ActionBarActivity {
 
     @Override
@@ -42,5 +43,11 @@ public class MainActivity extends ActionBarActivity {
     public void startGame(View view) {
         Intent intent = new Intent(this, Round.class);
         startActivity(intent);
+    }
+
+
+    public void viewHighScores(View view) {
+        Intent highIntent = new Intent(this, HighScores.class);
+        this.startActivity(highIntent);
     }
 }

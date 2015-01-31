@@ -29,3 +29,4 @@ proguard/
 # Workspace and merge stuff
 *.orig
 */workspace.xml
+.idea/workspace.xml

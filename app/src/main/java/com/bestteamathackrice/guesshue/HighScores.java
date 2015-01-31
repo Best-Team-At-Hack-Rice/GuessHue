@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.SharedPreferences;
+import android.widget.TextView;
 
 
 public class HighScores extends ActionBarActivity {
@@ -12,6 +14,8 @@ public class HighScores extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_scores);
+        TextView scoreView = (TextView)findViewById(R.id.high_scores_list);
+        SharedPreferences scorePrefs = getSharedPreferences(MainActivity.GAME_PREFS, 0);
     }
 
 
