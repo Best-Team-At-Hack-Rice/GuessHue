@@ -1,19 +1,40 @@
 package com.bestteamathackrice.guesshue;
 
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import java.util.Timer;
 
 
 public class Round extends ActionBarActivity {
+    public int current_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round);
+
+
+        CountDownTimer countdown = new CountDownTimer(30000, 1000) {
+
+            TextView time_display = (TextView) findViewById(R.id.count_down_text);
+
+            public void onTick(long millisUntilFinished) {
+                current_time = (int) millisUntilFinished / 1000;
+                time_display.setText("seconds remaining: " + millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                time_display.setText("done!");
+            }
+        }.start();
+
     }
 
 
