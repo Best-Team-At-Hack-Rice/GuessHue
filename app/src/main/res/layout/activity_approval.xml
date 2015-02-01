@@ -50,9 +50,9 @@
 
         android:textSize="30sp"
         android:background="@drawable/round_button"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="30dp" />
         style="?android:attr/borderlessButtonStyle"
         android:fontFamily="fonts/ropasansregular.ttf"/>
 
