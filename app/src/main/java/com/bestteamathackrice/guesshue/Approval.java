@@ -56,12 +56,6 @@ public class Approval extends ActionBarActivity {
     }
 
     @Override
-    protected void onStop(){
-        super.onStop();
-        countdown.cancel();
-    }
-
-    @Override
     public void onBackPressed() {
     }
 
