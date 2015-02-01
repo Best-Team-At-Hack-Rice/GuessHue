@@ -24,28 +24,9 @@ public class Approval extends ActionBarActivity {
 
     private ColorDiff colorDiff = new ColorDiff();
 
-    private int goalColor = 0xFF00FF;
+    private int goalColor;
 
     private int actualColor;
-
-    private class ColorDiff implements DistanceFunction<Integer> {
-
-        @Override
-        public double calculate(Integer p1, Integer p2) {
-            int r1 = (p1 & 0xFF0000) >> 16;
-            int g1 = (p1 & 0x00FF00) >> 8;
-            int b1 = p1 & 0x0000FF;
-
-            int r2 = (p2 & 0xFF0000) >> 16;
-            int g2 = (p2 & 0x00FF00) >> 8;
-            int b2 = p2 & 0x0000FF;
-
-            return Math.sqrt((r1 - r2) * (r1 - r2) +
-                    (g1 - g2) * (g1 - g2) +
-                    (b1 - b2) * (b1 - b2));
-        }
-
-    }
 
     private long current_time;
     private Intent score_intent;
@@ -62,6 +43,7 @@ public class Approval extends ActionBarActivity {
         time_display = (TextView) findViewById(R.id.count_down_text_approval);
 
         current_time = (long) getIntent().getExtras().get("time_left");
+        goalColor = (int) getIntent().getExtras().get("goal_color");
     }
 
     @Override
@@ -204,4 +186,24 @@ public class Approval extends ActionBarActivity {
 //
 //        }
     }
+    private class ColorDiff implements DistanceFunction<Integer> {
+
+        @Override
+        public double calculate(Integer p1, Integer p2) {
+            int r1 = (p1 & 0xFF0000) >> 16;
+            int g1 = (p1 & 0x00FF00) >> 8;
+            int b1 = p1 & 0x0000FF;
+
+            int r2 = (p2 & 0xFF0000) >> 16;
+            int g2 = (p2 & 0x00FF00) >> 8;
+            int b2 = p2 & 0x0000FF;
+
+            return Math.sqrt((r1 - r2) * (r1 - r2) +
+                    (g1 - g2) * (g1 - g2) +
+                    (b1 - b2) * (b1 - b2));
+        }
+
+    }
 }
+
+
