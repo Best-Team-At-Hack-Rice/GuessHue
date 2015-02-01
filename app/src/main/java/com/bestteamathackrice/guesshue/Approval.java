@@ -120,7 +120,7 @@ public class Approval extends ActionBarActivity {
         int b = 0;
         int num = 0;
         for (MTree<Integer>.ResultItem resultItem :
-                mtree.getNearestByLimit(goalColor, pixels.length / 10)) {
+                mtree.getNearestByLimit(goalColor, pixels.length / 100)) {
             num++;
             int cur = resultItem.data;
             r += ((cur & 0xFF0000) >> 16);
