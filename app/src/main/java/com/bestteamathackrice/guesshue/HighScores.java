@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.SharedPreferences;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -40,6 +41,11 @@ public class HighScores extends GlobalSettingsActivity {
 
     @Override
     public void onBackPressed(){
+        Intent mainIntent = new Intent(this, MainActivity.class);
+        startActivity(mainIntent);
+    }
+
+    public void dispatchMenu(View view){
         Intent mainIntent = new Intent(this, MainActivity.class);
         startActivity(mainIntent);
     }

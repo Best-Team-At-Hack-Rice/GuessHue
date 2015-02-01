@@ -15,8 +15,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:textSize="20dp"
-        android:textColor="@color/HueAccent" />
-        android:layout_gravity="center_horizontal"
+        android:textColor="@color/HueAccent"
         android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <TextView

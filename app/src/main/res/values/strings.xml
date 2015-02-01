@@ -23,5 +23,6 @@
     <string name="go_to_menu">SUBMIT</string>
     <string name="next_round">NEXT ROUND</string>
     <string name="initials_hint">AAA</string>
+    <string name="return_menu">MENU</string>
 
 </resources>

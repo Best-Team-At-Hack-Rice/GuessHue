@@ -1,11 +1,12 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@color/HueBackground"
-    tools:context="com.bestteamathackrice.guesshue.HighScores">
+    tools:context="com.bestteamathackrice.guesshue.HighScores"
+    android:orientation="vertical">
 
     <com.bestteamathackrice.guesshue.CustomTextView
         android:id="@+id/high_head"
@@ -17,11 +18,12 @@
         android:textColor="@color/HueMedium"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:fontFamily="fonts/ropasansregular.ttf"/>
+        android:fontFamily="fonts/ropasansregular.ttf"
+        android:layout_gravity="center_horizontal" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="376dp"
         android:orientation="horizontal"
         android:layout_below="@id/high_head"
         android:layout_centerHorizontal="true"
@@ -37,7 +39,7 @@
             android:textStyle="bold"
             />
 
-        <TextView
+	<TextView
             android:id="@+id/high_scores_value_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -47,6 +49,21 @@
             android:textSize="22sp"
             android:textStyle="bold"/>
 
-    </LinearLayout>
+     </LinearLayout>
 
-</RelativeLayout>
+    <com.bestteamathackrice.guesshue.CustomButton
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:id="@+id/return_button"
+        android:text="@string/return_menu"
+        android:textColor="@color/HueMedium"
+        android:onClick="dispatchMenu"
+        android:background="@drawable/round_button"
+        android:layout_marginBottom="20dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:fontFamily="fonts/ropasansregular.ttf"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

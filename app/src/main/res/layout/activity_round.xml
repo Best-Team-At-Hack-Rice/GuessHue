@@ -24,8 +24,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:textSize="18dp"
-        android:textColor="@color/HueMedium" />
-        android:layout_gravity="center_horizontal"
+        android:textColor="@color/HueMedium"
         android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <ImageView
@@ -53,7 +52,6 @@
         android:layout_gravity="center"
         android:layout_marginBottom="150dp"
         android:onClick="dispatchApprovalActivity"
-        android:elegantTextHeight="false"
         android:layout_marginTop="20dp"
         android:fontFamily="fonts/ropasansregular.ttf"/>
 
