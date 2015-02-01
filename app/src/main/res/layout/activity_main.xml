@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/guesshue2" />
 
-    <Button
+    <com.bestteamathackrice.guesshue.CustomButton
         android:id="@+id/play_btn"
 
         android:text="@string/button_play"
@@ -29,7 +29,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="150dp" />
 
-    <Button
+    <com.bestteamathackrice.guesshue.CustomButton
         android:id="@+id/high_scores_btn"
 
         android:text="@string/high_scores"
