@@ -25,12 +25,10 @@ public class MainActivity extends GlobalSettingsActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        SharedPreferences prefs = getSharedPreferences(GAME_PREFS, 0);
-//        SharedPreferences.Editor editor = prefs.edit();
-//        List<String> myStrings = Arrays.asList(new String[] {"jfk 123", "mbh 1423", "othr 243"});
-//        Set<String> myStringsSet = new HashSet<String>(myStrings);
-//        editor.putStringSet("highScores", myStringsSet);
-//        editor.commit();
+        SharedPreferences prefs = getSharedPreferences(GAME_PREFS, 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.clear();
+        editor.commit();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
