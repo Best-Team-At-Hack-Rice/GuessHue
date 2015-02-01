@@ -66,6 +66,9 @@ public class MainActivity extends GlobalSettingsActivity {
         SharedPreferences.Editor scoreEdit = gamePrefs.edit();
         scoreEdit.putString("highScores", highScores);
         scoreEdit.commit();
+
+        DataMule.totalRound = 0;
+        DataMule.totalScore = 0;
         Intent intent = new Intent(this, Round.class);
         startActivity(intent);
     }
