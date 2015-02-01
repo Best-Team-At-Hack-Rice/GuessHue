@@ -49,7 +49,7 @@ public class HighScores extends GlobalSettingsActivity {
     @Override
     public void onResume() {
         super.onResume();
-        TextView scoreView = (TextView)findViewById(R.id.high_scores_list);
+        TextView scoreView = (TextView) findViewById(R.id.high_scores_list);
         scoreView.setTypeface(type);
         SharedPreferences scorePrefs = getSharedPreferences(MainActivity.GAME_PREFS, 0);
         String[] savedScores = scorePrefs.getString("highScores", "").split("\\|");

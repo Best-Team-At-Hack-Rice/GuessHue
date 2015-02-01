@@ -18,7 +18,7 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <com.bestteamathackrice.guesshue.CustomTextView
+    <TextView
         android:id="@+id/high_scores_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

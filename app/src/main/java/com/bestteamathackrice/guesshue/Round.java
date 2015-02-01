@@ -15,7 +15,7 @@ import java.util.Random;
 import java.util.Timer;
 
 
-public class Round extends ActionBarActivity {
+public class Round extends GlobalSettingsActivity {
 
     private int goal_color;
     private long current_time;
@@ -30,6 +30,7 @@ public class Round extends ActionBarActivity {
         current_time = 30000;
         score_intent = new Intent(this, Score.class);
         time_display = (TextView) findViewById(R.id.count_down_text_round);
+        time_display.setTypeface(type);
         goal_color = generateColor();
 
         ImageView image = (ImageView) findViewById(R.id.goal_color);
@@ -54,11 +55,11 @@ public class Round extends ActionBarActivity {
 
             public void onTick(long millisUntilFinished) {
                 current_time = millisUntilFinished;
-                time_display.setText("seconds remaining: " + current_time / 1000);
+                time_display.setText("TIME LEFT: " + current_time / 1000);
             }
 
             public void onFinish() {
-                time_display.setText("done!");
+                time_display.setText("OUT OF TIME");
                 DataMule.totalRound +=1;
                 score_intent.putExtra("round_score", 0);
                 startActivity(score_intent);

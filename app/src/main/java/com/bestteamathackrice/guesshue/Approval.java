@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.CountDownTimer;
 import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +16,7 @@ import mtree.DistanceFunction;
 import mtree.MTree;
 
 
-public class Approval extends ActionBarActivity {
+public class Approval extends GlobalSettingsActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -46,9 +45,11 @@ public class Approval extends ActionBarActivity {
         setContentView(R.layout.activity_approval);
 
         yourColorText = (TextView) findViewById(R.id.your_color_text);
+        yourColorText.setTypeface(type);
         yourColorText.setVisibility(View.GONE);
 
         time_display = (TextView) findViewById(R.id.count_down_text_approval);
+        time_display.setTypeface(type);
 
         current_time = (long) getIntent().getExtras().get("time_left");
         goalColor = (int) getIntent().getExtras().get("goal_color");
@@ -59,11 +60,11 @@ public class Approval extends ActionBarActivity {
 
             public void onTick(long millisUntilFinished) {
                 current_time = millisUntilFinished;
-                time_display.setText("seconds remaining: " + current_time / 1000);
+                time_display.setText("TIME LEFT: " + current_time / 1000);
             }
 
             public void onFinish() {
-                time_display.setText("done!");
+                time_display.setText("OUT OF TIME");
                 DataMule.totalRound += 1;
                 dispatchScoreHoldingIntent(0);
             }

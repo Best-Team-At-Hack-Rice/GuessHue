@@ -2,17 +2,14 @@ package com.bestteamathackrice.guesshue;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,8 +37,7 @@ public class MainActivity extends GlobalSettingsActivity {
     }
 
     @Override
-    public void onBackPressed() {
-    }
+    public void onBackPressed() {}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -81,5 +77,11 @@ public class MainActivity extends GlobalSettingsActivity {
     public void viewHighScores(View view) {
         Intent highIntent = new Intent(this, HighScores.class);
         startActivity(highIntent);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mainMusic.stop();
     }
 }

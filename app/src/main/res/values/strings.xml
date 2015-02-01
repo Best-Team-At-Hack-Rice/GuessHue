@@ -11,16 +11,16 @@
     <string name="button_play">PLAY GAME</string>
     <string name="high_scores">HIGH SCORES</string>
     <string name="title_activity_high_scores">HighScores</string>
-    <string name="your_color">Your Color</string>
+    <string name="your_color">The color you found!</string>
     <string name="user_color_description">The color produced by the user photograph.</string>
-    <string name="take_photo">Take</string>
-    <string name="use_photo">Use</string>
+    <string name="take_photo">TAKE A PHOTO</string>
+    <string name="use_photo">USE THIS COLOR</string>
     <string name="find_color">Find this color!</string>
-    <string name="instructions">INSTRUCTIONS HERE YO</string>
+    <string name="instructions">Take a picture of something with this color in it. You will be scored based on how close the color you find is to this color. Be quick about, you only have 30 seconds starting now!</string>
     <string name="goal_color_description">Find this color!</string>
-    <string name="play_round_button">Play round</string>
+    <string name="play_round_button">PLAY ROUND</string>
     <string name="title_activity_global_settings">GlobalSettingsActivity</string>
     <string name="go_to_menu">Back to Main</string>
-    <string name="next_round">Next Round</string>
+    <string name="next_round">NEXT ROUND</string>
 
 </resources>
