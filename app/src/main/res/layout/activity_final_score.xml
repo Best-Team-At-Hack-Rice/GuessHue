@@ -13,7 +13,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/final_score"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="150dp" />
+        android:layout_marginTop="50dp"
+        android:textSize="30sp"
+        android:fontFamily="fonts/ropasansregular.ttf"
+        android:textColor="@color/HueAccent" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -21,6 +24,7 @@
         android:layout_gravity="center_horizontal"
         android:id="@+id/enter_initials"
         android:hint="@string/initials_hint"
+        android:fontFamily="fonts/ropasansregular.ttf"
         />
 
      <com.bestteamathackrice.guesshue.CustomButton
@@ -34,6 +38,8 @@
         android:layout_marginBottom="20dp"
         style="?android:attr/borderlessButtonStyle"
         android:layout_marginTop="30dp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
 </LinearLayout>
