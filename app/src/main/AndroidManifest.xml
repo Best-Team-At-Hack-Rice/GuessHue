@@ -6,6 +6,12 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
+    <receiver android:name=".RemoteControlReceiver">
+        <intent-filter>
+            <action android:name="android.intent.action.MEDIA_BUTTON" />
+        </intent-filter>
+    </receiver>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"

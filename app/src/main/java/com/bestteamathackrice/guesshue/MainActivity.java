@@ -2,6 +2,8 @@ package com.bestteamathackrice.guesshue;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,11 +18,16 @@ import java.util.List;
 public class MainActivity extends ActionBarActivity {
 
     public static final String GAME_PREFS = "GuessHuePrefs";
+    MediaPlayer mainMusic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mainMusic = MediaPlayer.create(MainActivity.this, R.raw.main_music);
+        mainMusic.setLooping(true);
+        mainMusic.start();
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
     }
 
 
