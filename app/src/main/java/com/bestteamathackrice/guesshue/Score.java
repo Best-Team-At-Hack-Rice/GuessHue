@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+/**
+ * Activity for displaying the most recent round's score.
+ */
 public class Score extends GlobalSettingsActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -15,9 +15,10 @@ import android.widget.TextView;
 import mtree.DistanceFunction;
 import mtree.MTree;
 
-
+/**
+ * Activity for taking and approving images.
+ */
 public class Approval extends GlobalSettingsActivity {
-
     private static final int REQUEST_IMAGE_CAPTURE = 1;
 
     private int[] imageArray;
@@ -35,9 +36,29 @@ public class Approval extends GlobalSettingsActivity {
     private ImageView image;
 
     private long current_time;
+
     private TextView time_display;
+
     private CountDownTimer countdown;
 
+    private class ColorDiff implements DistanceFunction<Integer> {
+
+        @Override
+        public double calculate(Integer p1, Integer p2) {
+            int r1 = (p1 & 0xFF0000) >> 16;
+            int g1 = (p1 & 0x00FF00) >> 8;
+            int b1 = p1 & 0x0000FF;
+
+            int r2 = (p2 & 0xFF0000) >> 16;
+            int g2 = (p2 & 0x00FF00) >> 8;
+            int b2 = p2 & 0x0000FF;
+
+            return Math.sqrt((r1 - r2) * (r1 - r2) +
+                    (g1 - g2) * (g1 - g2) +
+                    (b1 - b2) * (b1 - b2));
+        }
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,8 +94,7 @@ public class Approval extends GlobalSettingsActivity {
     }
 
     @Override
-    public void onBackPressed() {
-    }
+    public void onBackPressed() {}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -190,31 +210,12 @@ public class Approval extends GlobalSettingsActivity {
             DataMule.totalScore +=score;
             dispatchScoreHoldingIntent(score);
         }
-
     }
 
     private void dispatchScoreHoldingIntent(int score) {
         Intent scoreHoldingIntent = new Intent(this, Score.class);
         scoreHoldingIntent.putExtra("round_score", score);
         startActivity(scoreHoldingIntent);
-    }
-    private class ColorDiff implements DistanceFunction<Integer> {
-
-        @Override
-        public double calculate(Integer p1, Integer p2) {
-            int r1 = (p1 & 0xFF0000) >> 16;
-            int g1 = (p1 & 0x00FF00) >> 8;
-            int b1 = p1 & 0x0000FF;
-
-            int r2 = (p2 & 0xFF0000) >> 16;
-            int g2 = (p2 & 0x00FF00) >> 8;
-            int b2 = p2 & 0x0000FF;
-
-            return Math.sqrt((r1 - r2) * (r1 - r2) +
-                    (g1 - g2) * (g1 - g2) +
-                    (b1 - b2) * (b1 - b2));
-        }
-
     }
 }
 

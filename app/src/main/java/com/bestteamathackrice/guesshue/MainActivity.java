@@ -13,8 +13,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Main activity. Gateway to gameplay.
+ */
 public class MainActivity extends GlobalSettingsActivity {
-
     public static final String GAME_PREFS = "GuessHuePrefs";
     static MediaPlayer mainMusic;
 
@@ -27,7 +29,6 @@ public class MainActivity extends GlobalSettingsActivity {
         mainMusic.start();
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

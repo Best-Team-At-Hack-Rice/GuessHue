@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
+/**
+ * Our subclass of a general activity that includes our UI settings.
+ */
 public class GlobalSettingsActivity extends ActionBarActivity {
     protected static Typeface type;
 
