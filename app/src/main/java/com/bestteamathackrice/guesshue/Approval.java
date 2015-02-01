@@ -2,8 +2,6 @@ package com.bestteamathackrice.guesshue;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -12,15 +10,40 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import mtree.DistanceFunction;
+import mtree.MTree;
 
 
 public class Approval extends ActionBarActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    private int[] imageArray;
+
+    private ColorDiff colorDiff = new ColorDiff();
+
+    private int goalColor = 0xFF00FF;
+
+    private int actualColor;
+
+    private class ColorDiff implements DistanceFunction<Integer> {
+
+        @Override
+        public double calculate(Integer p1, Integer p2) {
+            int r1 = (p1 & 0xFF0000) >> 16;
+            int g1 = (p1 & 0x00FF00) >> 8;
+            int b1 = p1 & 0x0000FF;
+
+            int r2 = (p2 & 0xFF0000) >> 16;
+            int g2 = (p2 & 0x00FF00) >> 8;
+            int b2 = p2 & 0x0000FF;
+
+            return Math.sqrt((r1 - r2) * (r1 - r2) +
+                    (g1 - g2) * (g1 - g2) +
+                    (b1 - b2) * (b1 - b2));
+        }
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +91,80 @@ public class Approval extends ActionBarActivity {
             if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
                 Bundle extras = data.getExtras();
                 Bitmap imageBitmap = (Bitmap) extras.get("data");
-                image.setImageBitmap(imageBitmap);
+                intArrayFromBitmap(imageBitmap);
+                actualColor = getClosestColor(imageArray, goalColor);
+                actualColor |= 0xFF000000;
+                image.setBackgroundColor(actualColor);
             }
+    }
+
+    public int getClosestColor(int[] pixels, int goalColor) {
+
+        MTree<Integer> mtree = new MTree<>(colorDiff, null);
+        for (int pixel : pixels) {
+            mtree.add(pixel);
+        }
+        int r = 0;
+        int g = 0;
+        int b = 0;
+        int num = 0;
+        for (MTree<Integer>.ResultItem resultItem :
+                mtree.getNearestByLimit(goalColor, pixels.length / 10)) {
+            num++;
+            int cur = resultItem.data;
+            r += ((cur & 0xFF0000) >> 16);
+            g += ((cur & 0x00FF00) >> 8);
+            b += (cur & 0x0000FF);
+        }
+        r /= num;
+        g /= num;
+        b /= num;
+        r &= 0xFF;
+        g &= 0xFF;
+        b &= 0xFF;
+        r <<= 16;
+        g <<= 8;
+        return r | g | b;
+    }
+
+    private void intArrayFromBitmap(Bitmap bitmap) {
+        imageArray = new int[bitmap.getWidth() * bitmap.getHeight()];
+        bitmap.getPixels(imageArray, 0, bitmap.getWidth(), 0, 0, bitmap.getWidth(),
+                bitmap.getHeight());
+    }
+
+    public int getScore(int inputColor, int goalColor) {
+        double maxDist = -1;
+        for (int r = 0; r <= 1; r++) {
+            for (int g = 0; g <= 1; g++) {
+                for (int b = 0; b <= 1; b++) {
+                    maxDist = Math.max(colorDiff.calculate(goalColor, (r * 0xFF0000) |
+                            (g * 0x00FF00) | (b * 0x0000FF)), maxDist);
+                }
+            }
+        }
+
+        double diff =  colorDiff.calculate(inputColor, goalColor);
+        diff = maxDist - diff;
+        diff /= maxDist;
+
+        diff -= .5;
+        diff = Math.max(0, diff);
+        diff *= 2.0;
+
+        diff = (int) (diff*100);
+        return (int) diff*10;
+    }
+
+    public void goToScore(View view) {
+        int score = getScore(actualColor, goalColor);
+        dispatchScoreHoldingIntent(score);
+    }
+
+    private void dispatchScoreHoldingIntent(int score) {
+//        Intent scoreHoldingIntent = new Intent();
+//        if (scoreHoldingIntent.resolveActivity(getPackageManager()) != null) {
+//
+//        }
     }
 }
