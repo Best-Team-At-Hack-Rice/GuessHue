@@ -20,7 +20,7 @@
     <string name="goal_color_description">Find this color!</string>
     <string name="play_round_button">PLAY ROUND</string>
     <string name="title_activity_global_settings">GlobalSettingsActivity</string>
-    <string name="go_to_menu">Back to Main</string>
+    <string name="go_to_menu">SUBMIT</string>
     <string name="next_round">NEXT ROUND</string>
     <string name="initials_hint">AAA</string>
 

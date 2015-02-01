@@ -24,12 +24,16 @@
         />
 
      <com.bestteamathackrice.guesshue.CustomButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
         android:id="@+id/menu_button"
-        android:hint="@string/go_to_menu"
+        android:text="@string/go_to_menu"
+        android:textColor="@color/HueMedium"
         android:onClick="submitScore"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="150dp" />
+        android:background="@drawable/round_button"
+        android:layout_marginBottom="20dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
