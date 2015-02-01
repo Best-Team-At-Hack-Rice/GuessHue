@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.CountDownTimer;
 import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,9 +45,11 @@ public class Approval extends GlobalSettingsActivity {
         setContentView(R.layout.activity_approval);
 
         yourColorText = (TextView) findViewById(R.id.your_color_text);
+        yourColorText.setTypeface(type);
         yourColorText.setVisibility(View.GONE);
 
         time_display = (TextView) findViewById(R.id.count_down_text_approval);
+        time_display.setTypeface(type);
 
         current_time = (long) getIntent().getExtras().get("time_left");
         goalColor = (int) getIntent().getExtras().get("goal_color");

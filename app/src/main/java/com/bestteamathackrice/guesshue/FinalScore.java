@@ -16,6 +16,7 @@ public class FinalScore extends GlobalSettingsActivity {
         setContentView(R.layout.activity_final_score);
 
         TextView finalScoreDisplay = (TextView) findViewById(R.id.final_score);
+        finalScoreDisplay.setTypeface(type);
 
         finalScoreDisplay.setText(Integer.toString(DataMule.totalScore));
     }
@@ -48,7 +49,6 @@ public class FinalScore extends GlobalSettingsActivity {
     }
 
     public void dispatchMainActivity(View view){
-        MainActivity.mainMusic.stop();
         Intent mainIntent = new Intent(this, MainActivity.class);
         startActivity(mainIntent);
     }
