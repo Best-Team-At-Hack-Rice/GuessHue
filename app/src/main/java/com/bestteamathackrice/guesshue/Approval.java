@@ -42,12 +42,6 @@ public class Approval extends ActionBarActivity {
 
         current_time = (long) getIntent().getExtras().get("time_left");
         goalColor = (int) getIntent().getExtras().get("goal_color");
-    }
-
-    @Override
-    protected void onResume(){
-
-        super.onResume();
 
         countdown = new CountDownTimer(current_time, 1000) {
 
@@ -63,7 +57,6 @@ public class Approval extends ActionBarActivity {
             }
 
         }.start();
-
     }
 
     @Override
@@ -176,7 +169,6 @@ public class Approval extends ActionBarActivity {
 
     public void goToScore(View view) {
         countdown.cancel();
-
         int score = getScore(actualColor, goalColor);
         DataMule.totalRound +=1;
         DataMule.totalScore +=score;

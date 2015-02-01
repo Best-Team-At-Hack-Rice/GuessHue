@@ -16,7 +16,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/next_round_buton"
+        android:id="@+id/next_round_button"
         android:hint="@string/next_round"
         android:onClick="dispatchRoundActivity"
         android:layout_gravity="center_horizontal" />

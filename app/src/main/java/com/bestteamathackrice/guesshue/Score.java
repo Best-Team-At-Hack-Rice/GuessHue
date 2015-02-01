@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -18,8 +19,8 @@ public class Score extends ActionBarActivity {
         setContentView(R.layout.activity_score);
 
         if(DataMule.totalRound >= 3){
-            Intent finalScoreIntent = new Intent(this, FinalScore.class);
-            startActivity(finalScoreIntent);
+            Button button = (Button) findViewById(R.id.next_round_button);
+            button.setText("Final Score");
         }
 
         TextView score_display = (TextView) findViewById(R.id.score_display);
@@ -54,7 +55,13 @@ public class Score extends ActionBarActivity {
     }
 
     public void dispatchRoundActivity(View view){
-        Intent roundIntent = new Intent(this, Round.class);
-        startActivity(roundIntent);
+        if(DataMule.totalRound >= 3){
+            Intent finalScoreIntent = new Intent(this, FinalScore.class);
+            startActivity(finalScoreIntent);
+        }else{
+            Intent roundIntent = new Intent(this, Round.class);
+            startActivity(roundIntent);
+        }
+
     }
 }
