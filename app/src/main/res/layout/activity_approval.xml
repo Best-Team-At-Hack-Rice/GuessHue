@@ -16,6 +16,8 @@
         android:layout_marginTop="20dp"
         android:textSize="20dp"
         android:textColor="@color/HueAccent" />
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <TextView
         android:text="@string/your_color"
@@ -26,6 +28,8 @@
         android:layout_marginTop="20dp"
         android:textSize="20dp"
         android:textColor="@color/HueMedium" />
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <ImageView
         android:id="@+id/user_color"
@@ -49,6 +53,8 @@
         android:layout_marginBottom="40dp"
         style="?android:attr/borderlessButtonStyle"
         android:layout_marginTop="25dp" />
+        style="?android:attr/borderlessButtonStyle"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <com.bestteamathackrice.guesshue.CustomButton
         android:layout_width="270dp"
@@ -64,5 +70,7 @@
         android:elevation="0dp"
         android:layout_marginTop="10dp"
         style="?android:attr/borderlessButtonStyle" />
+        android:layout_marginBottom="20dp"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
 </LinearLayout>

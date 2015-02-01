@@ -15,13 +15,21 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="150dp" />
 
-    <com.bestteamathackrice.guesshue.CustomButton
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/enter_initials"
+        android:hint="@string/initials_hint"
+        />
+
+     <com.bestteamathackrice.guesshue.CustomButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/menu_button"
         android:hint="@string/go_to_menu"
-        android:onClick="dispatchMainActivity"
-        android:layout_gravity="center"
+        android:onClick="submitScore"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="150dp" />
 
 </LinearLayout>

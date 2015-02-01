@@ -30,5 +30,7 @@
         android:layout_marginBottom="20dp"
         style="?android:attr/borderlessButtonStyle"
         android:layout_marginTop="175dp" />
+        android:layout_marginBottom="20dp"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
 </LinearLayout>

@@ -30,6 +30,6 @@ public class PlayerScore implements Comparable<PlayerScore> {
     }
 
     public int compareTo(PlayerScore other) {
-        return this.getScore() - other.getScore();
+        return other.getScore() - this.getScore();
     }
 }

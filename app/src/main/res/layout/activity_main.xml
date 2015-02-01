@@ -28,7 +28,8 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="150dp" />
+        android:layout_marginBottom="150dp"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <com.bestteamathackrice.guesshue.CustomButton
         android:id="@+id/high_scores_btn"
@@ -46,6 +47,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
         android:layout_alignLeft="@+id/play_btn"
-        android:layout_alignStart="@+id/play_btn" />
+        android:layout_alignStart="@+id/play_btn"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
 </RelativeLayout>
