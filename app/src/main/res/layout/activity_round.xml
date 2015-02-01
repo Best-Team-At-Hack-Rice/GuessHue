@@ -12,7 +12,8 @@
         android:text="@string/find_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <ImageView
         android:layout_width="200dp"
@@ -25,13 +26,15 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/count_down_text_round"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/instructions"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <com.bestteamathackrice.guesshue.CustomButton
         android:id="@+id/play_round"

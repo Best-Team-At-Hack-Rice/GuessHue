@@ -12,14 +12,16 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/count_down_text_approval"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <TextView
         android:text="@string/your_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/your_color_text"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <ImageView
         android:id="@+id/user_color"

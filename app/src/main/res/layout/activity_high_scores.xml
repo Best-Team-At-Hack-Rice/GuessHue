@@ -16,7 +16,8 @@
         android:text="@string/high_scores"
         android:textColor="@color/HueMedium"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
     <TextView
         android:id="@+id/high_scores_list"
@@ -28,6 +29,7 @@
         android:padding="10dp"
         android:textColor="@color/HueMedium"
         android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
 </RelativeLayout>
