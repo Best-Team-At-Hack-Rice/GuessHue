@@ -59,4 +59,10 @@ public class HighScores extends GlobalSettingsActivity {
         }
         scoreView.setText(scoreBuild.toString());
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        scoresMusic.stop();
+    }
 }
