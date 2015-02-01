@@ -29,19 +29,29 @@
         android:layout_gravity="center_horizontal" />
 
     <com.bestteamathackrice.guesshue.CustomButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
         android:id="@+id/take_photo"
         android:layout_gravity="center_horizontal"
-        android:hint="@string/take_photo"
-        android:onClick="takePhoto" />
+        android:text="@string/take_photo"
+        android:onClick="takePhoto"
+        android:textColor="@color/HueMedium"
+
+        android:textSize="30sp"
+        android:background="@drawable/round_button"
+        android:layout_marginBottom="30dp"
+        style="?android:attr/borderlessButtonStyle"/>
 
     <com.bestteamathackrice.guesshue.CustomButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
         android:id="@+id/use_photo"
         android:layout_gravity="center_horizontal"
-        android:hint="@string/use_photo"
-        android:onClick="goToScore"/>
+        android:text="@string/use_photo"
+        android:onClick="goToScore"
+        android:textColor="@color/HueMedium"
+        android:textSize="30sp"
+        android:background="@drawable/round_button"
+        android:layout_marginBottom="20dp"/>
 
 </LinearLayout>
