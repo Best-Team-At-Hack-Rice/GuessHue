@@ -10,7 +10,8 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/guesshue2" />
+        android:src="@drawable/guesshue2"
+        android:layout_above="@+id/play_btn" />
 
     <com.bestteamathackrice.guesshue.CustomButton
         android:id="@+id/play_btn"
