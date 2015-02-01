@@ -17,7 +17,7 @@ import mtree.DistanceFunction;
 import mtree.MTree;
 
 
-public class Approval extends ActionBarActivity {
+public class Approval extends GlobalSettingsActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
 

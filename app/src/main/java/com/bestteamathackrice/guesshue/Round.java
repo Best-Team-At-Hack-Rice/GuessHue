@@ -15,7 +15,7 @@ import java.util.Random;
 import java.util.Timer;
 
 
-public class Round extends ActionBarActivity {
+public class Round extends GlobalSettingsActivity {
 
     private int goal_color;
     private long current_time;

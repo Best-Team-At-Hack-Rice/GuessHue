@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class Score extends ActionBarActivity {
+public class Score extends GlobalSettingsActivity {
 
 
     @Override
