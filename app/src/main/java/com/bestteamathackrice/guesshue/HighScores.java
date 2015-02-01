@@ -108,5 +108,3 @@ public class HighScores extends GlobalSettingsActivity {
 }
 
 
-
-}
