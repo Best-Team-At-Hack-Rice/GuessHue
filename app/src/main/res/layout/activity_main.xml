@@ -36,6 +36,8 @@
         android:textColor="@color/HueMedium"
         android:textSize="30sp"
 
+        android:onClick="viewHighScores"
+
         android:layout_width="270dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
