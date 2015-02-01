@@ -82,7 +82,10 @@ public class FinalScore extends ActionBarActivity {
 
         // Get a List of the high scores from the shared preferences
         Set<String> highScoresSet = scorePrefs.getStringSet("highScores", null);
-        ArrayList<String> highScoresArray = new ArrayList<>(highScoresSet);
+        ArrayList<String> highScoresArray = new ArrayList<>();
+        if (highScoresSet != null) {
+            highScoresArray = new ArrayList<>(highScoresSet);
+        }
 
         // Sort the high scores by score, inserting the new score where appropriate
         return sortHighScores(highScoresArray, name, scorePrefs);
