@@ -14,7 +14,8 @@
         android:id="@+id/final_score"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:textSize="30sp"
+        android:textSize="35sp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="fonts/ropasansregular.ttf"
         android:textColor="@color/HueAccent" />
 
