@@ -3,6 +3,8 @@ package com.bestteamathackrice.guesshue;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,12 +19,16 @@ import java.util.List;
 public class MainActivity extends GlobalSettingsActivity {
 
     public static final String GAME_PREFS = "GuessHuePrefs";
+    MediaPlayer mainMusic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mainMusic = MediaPlayer.create(MainActivity.this, R.raw.main_music);
+        mainMusic.setLooping(true);
+        mainMusic.start();
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
     }
 
 
@@ -60,6 +66,9 @@ public class MainActivity extends GlobalSettingsActivity {
         SharedPreferences.Editor scoreEdit = gamePrefs.edit();
         scoreEdit.putString("highScores", highScores);
         scoreEdit.commit();
+
+        DataMule.totalRound = 0;
+        DataMule.totalScore = 0;
         Intent intent = new Intent(this, Round.class);
         startActivity(intent);
     }
