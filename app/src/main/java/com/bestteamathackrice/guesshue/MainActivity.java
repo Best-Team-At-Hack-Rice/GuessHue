@@ -7,9 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
-
 public class MainActivity extends ActionBarActivity {
+
+    public static final String GAME_PREFS = "GuessHuePrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
