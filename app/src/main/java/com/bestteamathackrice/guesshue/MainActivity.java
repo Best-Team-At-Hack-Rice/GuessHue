@@ -19,7 +19,7 @@ import java.util.List;
 public class MainActivity extends GlobalSettingsActivity {
 
     public static final String GAME_PREFS = "GuessHuePrefs";
-    MediaPlayer mainMusic;
+    static MediaPlayer mainMusic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

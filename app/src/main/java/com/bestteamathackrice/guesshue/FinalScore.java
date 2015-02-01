@@ -45,6 +45,7 @@ public class FinalScore extends ActionBarActivity {
     }
 
     public void dispatchMainActivity(View view){
+        MainActivity.mainMusic.stop();
         Intent mainIntent = new Intent(this, MainActivity.class);
         startActivity(mainIntent);
     }
