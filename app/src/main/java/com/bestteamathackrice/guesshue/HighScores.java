@@ -1,5 +1,7 @@
 package com.bestteamathackrice.guesshue;
 
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,10 +12,15 @@ import android.widget.TextView;
 
 public class HighScores extends GlobalSettingsActivity {
 
+    static MediaPlayer scoresMusic;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_scores);
+        scoresMusic = MediaPlayer.create(HighScores.this, R.raw.scores_music);
+        scoresMusic.start();
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
     }
 
 
