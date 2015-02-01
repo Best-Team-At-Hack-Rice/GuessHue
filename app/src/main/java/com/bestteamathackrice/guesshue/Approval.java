@@ -60,11 +60,11 @@ public class Approval extends GlobalSettingsActivity {
 
             public void onTick(long millisUntilFinished) {
                 current_time = millisUntilFinished;
-                time_display.setText("seconds remaining: " + current_time / 1000);
+                time_display.setText("TIME LEFT: " + current_time / 1000);
             }
 
             public void onFinish() {
-                time_display.setText("done!");
+                time_display.setText("OUT OF TIME");
                 DataMule.totalRound += 1;
                 dispatchScoreHoldingIntent(0);
             }
