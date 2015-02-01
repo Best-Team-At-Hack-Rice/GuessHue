@@ -16,7 +16,7 @@
     <string name="take_photo">TAKE A PHOTO</string>
     <string name="use_photo">USE THIS COLOR</string>
     <string name="find_color">Find this color!</string>
-    <string name="instructions">Take a picture of something with this color in it. You will be scored based on how close the color you find is to this color. Be quick about, you only have 30 seconds starting now!</string>
+    <string name="instructions">Take a picture of something this color!</string>
     <string name="goal_color_description">Find this color!</string>
     <string name="play_round_button">PLAY ROUND</string>
     <string name="title_activity_global_settings">GlobalSettingsActivity</string>
