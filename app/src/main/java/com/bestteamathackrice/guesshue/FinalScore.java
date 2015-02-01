@@ -25,7 +25,7 @@ public class FinalScore extends ActionBarActivity {
         setContentView(R.layout.activity_final_score);
 
         TextView finalScoreDisplay = (TextView) findViewById(R.id.final_score);
-        finalScoreDisplay.setTypeface(type);
+        
 
         finalScoreDisplay.setText(Integer.toString(DataMule.totalScore));
 
