@@ -48,7 +48,8 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_gravity="center"
         android:layout_marginBottom="150dp"
-        android:onClick="dispatchApprovalActivity" />
+        android:onClick="dispatchApprovalActivity"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
 
 
