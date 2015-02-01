@@ -1,23 +1,68 @@
 package com.bestteamathackrice.guesshue;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.CountDownTimer;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class Approval extends ActionBarActivity {
 
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    private long current_time;
+    private Intent score_intent;
+    private TextView time_display;
+    private CountDownTimer countdown;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_approval);
+
+        score_intent = new Intent(this, Score.class);
+        time_display = (TextView) findViewById(R.id.count_down_text_approval);
+
+        current_time = (long) getIntent().getExtras().get("time_left");
     }
 
+    @Override
+    protected void onResume(){
+
+        super.onResume();
+
+        countdown = new CountDownTimer(current_time, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                current_time = millisUntilFinished;
+                time_display.setText("seconds remaining: " + current_time / 1000);
+            }
+
+            public void onFinish() {
+                time_display.setText("done!");
+                startActivity(score_intent);
+            }
+
+        }.start();
+
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        countdown.cancel();
+    }
+
+    @Override
+    public void onBackPressed() {
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -41,9 +86,7 @@ public class Approval extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-
-    public void dispatchTakePictureIntent() {
+    public void dispatchTakePictureIntent(View view) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);

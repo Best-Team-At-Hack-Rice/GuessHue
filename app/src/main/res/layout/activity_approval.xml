@@ -7,6 +7,12 @@
     tools:context="com.bestteamathackrice.guesshue.Approval"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/count_down_text_approval"
+        android:layout_gravity="center_horizontal" />
+
     <TextView android:text="@string/your_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

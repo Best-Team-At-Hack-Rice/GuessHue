@@ -13,28 +13,46 @@ import java.util.Timer;
 
 
 public class Round extends ActionBarActivity {
-    public int current_time;
+    private long current_time;
+    private Intent score_intent;
+    private TextView time_display;
+    private CountDownTimer countdown;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round);
+        current_time = 30000;
+        score_intent = new Intent(this, Score.class);
+        time_display = (TextView) findViewById(R.id.count_down_text_round);
+    }
 
+    @Override
+    protected void onResume(){
 
-        CountDownTimer countdown = new CountDownTimer(30000, 1000) {
+        super.onResume();
 
-            TextView time_display = (TextView) findViewById(R.id.count_down_text);
+        countdown = new CountDownTimer(current_time, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                current_time = (int) millisUntilFinished / 1000;
-                time_display.setText("seconds remaining: " + millisUntilFinished / 1000);
+                current_time = millisUntilFinished;
+                time_display.setText("seconds remaining: " + current_time / 1000);
             }
 
             public void onFinish() {
                 time_display.setText("done!");
+                startActivity(score_intent);
             }
+
         }.start();
 
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        countdown.cancel();
     }
 
 
@@ -61,7 +79,8 @@ public class Round extends ActionBarActivity {
     }
 
     public void dispatchApprovalActivity(View view) {
-        Intent intent = new Intent(this, Round.class);
+        Intent intent = new Intent(this, Approval.class);
+        intent.putExtra("time_left", current_time);
         startActivity(intent);
     }
 }
