@@ -44,6 +44,10 @@
             android:name=".HighScores"
             android:label="@string/title_activity_high_scores" >
         </activity>
+        <activity
+            android:name=".GlobalSettingsActivity"
+            android:label="@string/title_activity_global_settings" >
+        </activity>
     </application>
 
 </manifest>

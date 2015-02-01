@@ -19,5 +19,6 @@
     <string name="instructions">INSTRUCTIONS HERE YO</string>
     <string name="goal_color_description">Find this color!</string>
     <string name="play_round_button">Play round</string>
+    <string name="title_activity_global_settings">GlobalSettingsActivity</string>
 
 </resources>
