@@ -8,7 +8,7 @@ import android.view.MenuItem;
 
 
 public class GlobalSettingsActivity extends ActionBarActivity {
-    protected Typeface type;
+    protected static Typeface type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
