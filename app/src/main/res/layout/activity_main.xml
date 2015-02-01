@@ -15,13 +15,10 @@
 
     <com.bestteamathackrice.guesshue.CustomButton
         android:id="@+id/play_btn"
-
         android:text="@string/button_play"
         android:textColor="@color/HueMedium"
         android:textSize="30sp"
-
         android:onClick="startGame"
-
         android:layout_width="270dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"
@@ -33,13 +30,10 @@
 
     <com.bestteamathackrice.guesshue.CustomButton
         android:id="@+id/high_scores_btn"
-
         android:text="@string/high_scores"
         android:textColor="@color/HueMedium"
         android:textSize="30sp"
-
         android:onClick="viewHighScores"
-
         android:layout_width="270dp"
         android:layout_height="60dp"
         android:background="@drawable/round_button"

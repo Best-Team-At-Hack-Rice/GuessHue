@@ -11,6 +11,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/literal_final_score"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="fonts/ropasansregular.ttf"
+        android:enabled="false"
+        android:textSize="20dp"
+        android:textColor="@color/HueAccent"
+        android:layout_marginTop="70dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/final_score"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
@@ -26,7 +37,7 @@
         android:id="@+id/enter_initials"
         android:hint="@string/initials_hint"
         android:fontFamily="fonts/ropasansregular.ttf"
-        />
+        android:layout_marginBottom="100dp" />
 
      <com.bestteamathackrice.guesshue.CustomButton
         android:layout_width="270dp"

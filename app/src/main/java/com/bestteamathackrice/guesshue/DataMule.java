@@ -1,9 +1,10 @@
 package com.bestteamathackrice.guesshue;
 
 /**
- * Created by maclockard on 1/31/15.
+ * Holder for values we want held across activities.
  */
 public final class DataMule {
     static int totalScore;
+
     static int totalRound;
 }

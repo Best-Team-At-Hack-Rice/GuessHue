@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -91,6 +92,17 @@ public class Approval extends GlobalSettingsActivity {
             }
 
         }.start();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Button bottomButton = (Button) findViewById(R.id.use_photo);
+        if (!takenPicture) {
+            bottomButton.setVisibility(View.GONE);
+        } else {
+            bottomButton.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -206,8 +218,8 @@ public class Approval extends GlobalSettingsActivity {
         if (takenPicture) {
             countdown.cancel();
             int score = getScore(actualColor, goalColor);
-            DataMule.totalRound +=1;
-            DataMule.totalScore +=score;
+            DataMule.totalRound += 1;
+            DataMule.totalScore += score;
             dispatchScoreHoldingIntent(score);
         }
     }

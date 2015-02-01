@@ -1,6 +1,5 @@
 package com.bestteamathackrice.guesshue;
 
-
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.media.AudioManager;
@@ -17,11 +16,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Set;
 
-
+/**
+ * Activity for high scores page.
+ */
 public class HighScores extends GlobalSettingsActivity {
     static MediaPlayer scoresMusic;
-
-//    ArrayList<String> highScores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

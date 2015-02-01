@@ -11,9 +11,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/round_score"
+        android:id="@+id/round_score"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:textColor="@color/HueAccent"
+        android:fontFamily="fonts/ropasansregular.ttf"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/score_display"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="60dp"
         android:textSize="50dp"
         android:textColor="@color/HueAccent" />
 

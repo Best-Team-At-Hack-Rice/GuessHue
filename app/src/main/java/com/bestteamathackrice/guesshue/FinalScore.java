@@ -22,10 +22,8 @@ public class FinalScore extends GlobalSettingsActivity {
         setContentView(R.layout.activity_final_score);
 
         TextView finalScoreDisplay = (TextView) findViewById(R.id.final_score);
-        
 
         finalScoreDisplay.setText(Integer.toString(DataMule.totalScore));
-
     }
 
     @Override
@@ -53,11 +51,6 @@ public class FinalScore extends GlobalSettingsActivity {
         return super.onOptionsItemSelected(item);
     }
 
-//    public void dispatchMainActivity(View view){
-//        Intent mainIntent = new Intent(this, MainActivity.class);
-//        startActivity(mainIntent);
-//    }
-
     public void submitScore(View view) {
         // Get the initials from the player
         EditText initials = (EditText) findViewById(R.id.enter_initials);
@@ -68,7 +61,6 @@ public class FinalScore extends GlobalSettingsActivity {
 
         // Redirect to the High Scores activity
         Intent scoresIntent = new Intent(this, HighScores.class);
-//        scoresIntent.putStringArrayListExtra("HIGH_SCORES", highScores);
         startActivity(scoresIntent);
     }
 

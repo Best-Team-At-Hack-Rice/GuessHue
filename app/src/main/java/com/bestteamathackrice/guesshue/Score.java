@@ -18,10 +18,10 @@ public class Score extends GlobalSettingsActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
-        if(DataMule.totalRound >= 3){
+        if (DataMule.totalRound >= 3){
             Button button = (Button) findViewById(R.id.next_round_button);
             button.setTypeface(type);
-            button.setText("Final Score");
+            button.setText("End Game");
         }
 
         TextView score_display = (TextView) findViewById(R.id.score_display);

@@ -64,18 +64,6 @@ public class MainActivity extends GlobalSettingsActivity {
     }
 
     public void startGame(View view) {
-//        PlayerScore score1 = new PlayerScore("jfk", 123);
-//        PlayerScore score2 = new PlayerScore("mbh", 321);
-//        List<PlayerScore> scoreStrings = new ArrayList<>();
-//        scoreStrings.add(score1);
-//        scoreStrings.add(score2);
-//        Collections.sort(scoreStrings);
-//        String highScores = score1.getName() + " " + score1.getScore() + "|" + score2.getName() + " " + score2.getScore();
-//        SharedPreferences gamePrefs = getSharedPreferences(GAME_PREFS, 0);;
-//        SharedPreferences.Editor scoreEdit = gamePrefs.edit();
-//        scoreEdit.putString("highScores", highScores);
-//        scoreEdit.commit();
-
         DataMule.totalRound = 0;
         DataMule.totalScore = 0;
         Intent intent = new Intent(this, Round.class);

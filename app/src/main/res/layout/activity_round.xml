@@ -40,13 +40,9 @@
         android:id="@+id/play_round"
         android:layout_width="270dp"
         android:layout_height="60dp"
-
         android:textColor="@color/HueMedium"
-
         android:textSize="30sp"
-
         android:text="@string/play_round_button"
-
         android:background="@drawable/round_button"
         style="?android:attr/borderlessButtonStyle"
         android:layout_gravity="center"
@@ -54,7 +50,5 @@
         android:onClick="dispatchApprovalActivity"
         android:layout_marginTop="20dp"
         android:fontFamily="fonts/ropasansregular.ttf"/>
-
-
 
 </LinearLayout>
