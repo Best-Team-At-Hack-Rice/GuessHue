@@ -19,17 +19,34 @@
         android:textStyle="bold"
         android:fontFamily="fonts/ropasansregular.ttf"/>
 
-    <TextView
-        android:id="@+id/high_scores_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_below="@id/high_head"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:padding="10dp"
-        android:textColor="@color/HueMedium"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:fontFamily="fonts/ropasansregular.ttf"/>
+        android:fontFamily="fonts/ropasansregular.ttf">
+        <TextView
+            android:id="@+id/high_scores_name_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/HueMedium"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/high_scores_value_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="@color/HueMedium"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
