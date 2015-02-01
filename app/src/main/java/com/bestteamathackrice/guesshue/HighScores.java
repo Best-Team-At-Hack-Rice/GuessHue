@@ -2,16 +2,16 @@ package com.bestteamathackrice.guesshue;
 
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.SharedPreferences;
 import android.widget.TextView;
 
-
+/**
+ * Activity for displaying high score leaderboard.
+ */
 public class HighScores extends GlobalSettingsActivity {
-
     static MediaPlayer scoresMusic;
 
     @Override
@@ -22,7 +22,6 @@ public class HighScores extends GlobalSettingsActivity {
         scoresMusic.start();
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -14,7 +14,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends GlobalSettingsActivity {
-
     public static final String GAME_PREFS = "GuessHuePrefs";
     static MediaPlayer mainMusic;
 

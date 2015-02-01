@@ -5,10 +5,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@color/HueBackground"
-    tools:context="com.bestteamathackrice.guesshue.Round"
+    tools:context=".Round"
     android:orientation="vertical">
 
-    <com.bestteamathackrice.guesshue.CustomTextView
+    <TextView
         android:text="@string/find_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,18 +27,29 @@
         android:id="@+id/count_down_text_round"
         android:layout_gravity="center_horizontal" />
 
-    <com.bestteamathackrice.guesshue.CustomTextView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/instructions"
         android:layout_gravity="center_horizontal" />
 
     <com.bestteamathackrice.guesshue.CustomButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/play_round"
-        android:hint="@string/play_round_button"
-        android:layout_gravity="center_horizontal"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+
+        android:textColor="@color/HueMedium"
+
+        android:textSize="30sp"
+
+        android:text="@string/play_round_button"
+
+        android:background="@drawable/round_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_gravity="center"
+        android:layout_marginBottom="150dp"
         android:onClick="dispatchApprovalActivity" />
+
+
 
 </LinearLayout>

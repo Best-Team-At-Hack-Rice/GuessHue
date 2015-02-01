@@ -6,10 +6,9 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 /**
- * Created by johnking on 1/31/15.
+ * Custom TextView subclass that has our UI settings.
  */
 public class CustomTextView extends TextView {
-
     public CustomTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
@@ -30,5 +29,4 @@ public class CustomTextView extends TextView {
             setTypeface(GlobalSettingsActivity.type);
         }
     }
-
 }

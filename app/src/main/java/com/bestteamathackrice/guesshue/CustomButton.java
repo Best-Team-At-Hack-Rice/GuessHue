@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.widget.Button;
 
 /**
- * Created by johnking on 1/31/15.
+ * Subclass of buttons that have our custom UI settings.
  */
 public class CustomButton extends Button {
     public CustomButton(Context context, AttributeSet attrs, int defStyle) {

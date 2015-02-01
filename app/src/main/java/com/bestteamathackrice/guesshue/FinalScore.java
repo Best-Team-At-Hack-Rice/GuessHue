@@ -7,9 +7,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-
+/**
+ * Activity for displaying the final score of a game.
+ */
 public class FinalScore extends GlobalSettingsActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +22,6 @@ public class FinalScore extends GlobalSettingsActivity {
         finalScoreDisplay.setText(Integer.toString(DataMule.totalScore));
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -30,8 +30,7 @@ public class FinalScore extends GlobalSettingsActivity {
     }
 
     @Override
-    public void onBackPressed() {
-    }
+    public void onBackPressed() {}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
