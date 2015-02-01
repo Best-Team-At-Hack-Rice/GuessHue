@@ -8,7 +8,7 @@ You have three rounds to find colors. You are shown a hue and given 30 seconds t
 
 Implementation
 --------------
-Desgined for Hack.Rice 2015. Made in Android.
+Developed at Hack.Rice 2015. Made in Android.
 
 Contributors
 -----
