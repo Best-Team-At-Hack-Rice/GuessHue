@@ -4,10 +4,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/HueBackground"
     tools:context="com.bestteamathackrice.guesshue.FinalScore"
     android:orientation="vertical">
 
-    <TextView android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/final_score"
         android:layout_gravity="center_horizontal" />
@@ -20,7 +22,7 @@
         android:hint="@string/initials_hint"
         />
 
-    <Button
+     <com.bestteamathackrice.guesshue.CustomButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/menu_button"

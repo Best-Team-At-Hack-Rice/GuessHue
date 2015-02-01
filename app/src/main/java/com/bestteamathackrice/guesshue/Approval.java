@@ -2,9 +2,9 @@ package com.bestteamathackrice.guesshue;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.CountDownTimer;
 import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,9 +15,10 @@ import android.widget.TextView;
 import mtree.DistanceFunction;
 import mtree.MTree;
 
-
-public class Approval extends ActionBarActivity {
-
+/**
+ * Activity for taking and approving images.
+ */
+public class Approval extends GlobalSettingsActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 1;
 
     private int[] imageArray;
@@ -28,30 +29,63 @@ public class Approval extends ActionBarActivity {
 
     private int actualColor;
 
+    private boolean takenPicture = false;
+
+    private TextView yourColorText;
+
+    private ImageView image;
+
     private long current_time;
+
     private TextView time_display;
+
     private CountDownTimer countdown;
 
+    private class ColorDiff implements DistanceFunction<Integer> {
+
+        @Override
+        public double calculate(Integer p1, Integer p2) {
+            int r1 = (p1 & 0xFF0000) >> 16;
+            int g1 = (p1 & 0x00FF00) >> 8;
+            int b1 = p1 & 0x0000FF;
+
+            int r2 = (p2 & 0xFF0000) >> 16;
+            int g2 = (p2 & 0x00FF00) >> 8;
+            int b2 = p2 & 0x0000FF;
+
+            return Math.sqrt((r1 - r2) * (r1 - r2) +
+                    (g1 - g2) * (g1 - g2) +
+                    (b1 - b2) * (b1 - b2));
+        }
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_approval);
 
+        yourColorText = (TextView) findViewById(R.id.your_color_text);
+        yourColorText.setTypeface(type);
+        yourColorText.setVisibility(View.GONE);
+
         time_display = (TextView) findViewById(R.id.count_down_text_approval);
+        time_display.setTypeface(type);
 
         current_time = (long) getIntent().getExtras().get("time_left");
         goalColor = (int) getIntent().getExtras().get("goal_color");
 
+        image = (ImageView) findViewById(R.id.user_color);
+        image.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.guesshue2));
         countdown = new CountDownTimer(current_time, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 current_time = millisUntilFinished;
-                time_display.setText("seconds remaining: " + current_time / 1000);
+                time_display.setText("TIME LEFT: " + current_time / 1000);
             }
 
             public void onFinish() {
-                time_display.setText("done!");
+                time_display.setText("OUT OF TIME");
                 DataMule.totalRound += 1;
                 dispatchScoreHoldingIntent(0);
             }
@@ -60,8 +94,7 @@ public class Approval extends ActionBarActivity {
     }
 
     @Override
-    public void onBackPressed() {
-    }
+    public void onBackPressed() {}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -98,15 +131,17 @@ public class Approval extends ActionBarActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ImageView image = (ImageView) findViewById(R.id.user_color);
-            if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-                Bundle extras = data.getExtras();
-                Bitmap imageBitmap = (Bitmap) extras.get("data");
-                intArrayFromBitmap(imageBitmap);
-                actualColor = getClosestColor(imageArray, goalColor);
-                actualColor |= 0xFF000000;
-                image.setBackgroundColor(actualColor);
-            }
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            intArrayFromBitmap(imageBitmap);
+            takenPicture = true;
+            actualColor = getClosestColor(imageArray, goalColor);
+            actualColor |= 0xFF000000;
+            image.setImageBitmap(null);
+            image.setBackgroundColor(actualColor);
+            yourColorText.setVisibility(View.VISIBLE);
+        }
     }
 
     public int getClosestColor(int[] pixels, int goalColor) {
@@ -168,35 +203,19 @@ public class Approval extends ActionBarActivity {
     }
 
     public void goToScore(View view) {
-        countdown.cancel();
-        int score = getScore(actualColor, goalColor);
-        DataMule.totalRound +=1;
-        DataMule.totalScore +=score;
-        dispatchScoreHoldingIntent(score);
+        if (takenPicture) {
+            countdown.cancel();
+            int score = getScore(actualColor, goalColor);
+            DataMule.totalRound +=1;
+            DataMule.totalScore +=score;
+            dispatchScoreHoldingIntent(score);
+        }
     }
 
     private void dispatchScoreHoldingIntent(int score) {
         Intent scoreHoldingIntent = new Intent(this, Score.class);
         scoreHoldingIntent.putExtra("round_score", score);
         startActivity(scoreHoldingIntent);
-    }
-    private class ColorDiff implements DistanceFunction<Integer> {
-
-        @Override
-        public double calculate(Integer p1, Integer p2) {
-            int r1 = (p1 & 0xFF0000) >> 16;
-            int g1 = (p1 & 0x00FF00) >> 8;
-            int b1 = p1 & 0x0000FF;
-
-            int r2 = (p2 & 0xFF0000) >> 16;
-            int g2 = (p2 & 0x00FF00) >> 8;
-            int b2 = p2 & 0x0000FF;
-
-            return Math.sqrt((r1 - r2) * (r1 - r2) +
-                    (g1 - g2) * (g1 - g2) +
-                    (b1 - b2) * (b1 - b2));
-        }
-
     }
 }
 

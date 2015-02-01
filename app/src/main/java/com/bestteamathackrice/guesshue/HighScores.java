@@ -1,7 +1,11 @@
 package com.bestteamathackrice.guesshue;
 
+
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +18,7 @@ import java.util.Set;
 
 
 public class HighScores extends GlobalSettingsActivity {
+    static MediaPlayer scoresMusic;
 
 //    ArrayList<String> highScores;
 
@@ -21,10 +26,10 @@ public class HighScores extends GlobalSettingsActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_scores);
-
-//        getIntent().getExtras().getStringArrayList("HIGH_SCORES");
+        scoresMusic = MediaPlayer.create(HighScores.this, R.raw.scores_music);
+        scoresMusic.start();
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -93,6 +98,15 @@ public class HighScores extends GlobalSettingsActivity {
         String[] result = {namesString, scoresString};
         return result;
     }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        scoresMusic.stop();
+    }
+}
+
 
 
 }

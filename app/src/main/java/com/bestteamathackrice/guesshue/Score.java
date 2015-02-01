@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
-public class Score extends ActionBarActivity {
-
-
+/**
+ * Activity for displaying the most recent round's score.
+ */
+public class Score extends GlobalSettingsActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +20,12 @@ public class Score extends ActionBarActivity {
 
         if(DataMule.totalRound >= 3){
             Button button = (Button) findViewById(R.id.next_round_button);
+            button.setTypeface(type);
             button.setText("Final Score");
         }
 
         TextView score_display = (TextView) findViewById(R.id.score_display);
+        score_display.setTypeface(type);
         int roundScore = (int) getIntent().getExtras().get("round_score");
         score_display.setText(Integer.toString(roundScore));
     }

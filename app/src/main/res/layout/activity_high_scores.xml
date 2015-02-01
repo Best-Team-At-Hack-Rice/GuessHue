@@ -16,9 +16,10 @@
         android:text="@string/high_scores"
         android:textColor="@color/HueMedium"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
-    <com.bestteamathackrice.guesshue.CustomTextView
+    <TextView
         android:id="@+id/high_scores_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,6 +29,7 @@
         android:padding="10dp"
         android:textColor="@color/HueMedium"
         android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="fonts/ropasansregular.ttf"/>
 
 </RelativeLayout>

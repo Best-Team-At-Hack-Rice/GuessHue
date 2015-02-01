@@ -1,10 +1,11 @@
 package com.bestteamathackrice.guesshue;
 
 /**
- * Created by johnking on 1/31/15.
+ * Wrapper class for a player score in the leaderboard "database".
  */
 public class PlayerScore implements Comparable<PlayerScore> {
     private String name;
+
     private int score;
 
     public PlayerScore (String name, int score) {
