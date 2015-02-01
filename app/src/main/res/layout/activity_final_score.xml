@@ -7,12 +7,13 @@
     tools:context="com.bestteamathackrice.guesshue.FinalScore"
     android:orientation="vertical">
 
-    <TextView android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/final_score"
         android:layout_gravity="center_horizontal" />
 
-    <Button
+    <com.bestteamathackrice.guesshue.CustomButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/menu_button"

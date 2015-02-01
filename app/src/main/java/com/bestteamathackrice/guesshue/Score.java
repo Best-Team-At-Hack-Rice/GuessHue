@@ -20,10 +20,12 @@ public class Score extends GlobalSettingsActivity {
 
         if(DataMule.totalRound >= 3){
             Button button = (Button) findViewById(R.id.next_round_button);
+            button.setTypeface(type);
             button.setText("Final Score");
         }
 
         TextView score_display = (TextView) findViewById(R.id.score_display);
+        score_display.setTypeface(type);
         int roundScore = (int) getIntent().getExtras().get("round_score");
         score_display.setText(Integer.toString(roundScore));
     }

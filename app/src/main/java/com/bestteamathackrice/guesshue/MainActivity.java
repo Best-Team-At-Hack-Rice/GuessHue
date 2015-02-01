@@ -37,8 +37,7 @@ public class MainActivity extends GlobalSettingsActivity {
     }
 
     @Override
-    public void onBackPressed() {
-    }
+    public void onBackPressed() {}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -78,5 +77,11 @@ public class MainActivity extends GlobalSettingsActivity {
     public void viewHighScores(View view) {
         Intent highIntent = new Intent(this, HighScores.class);
         startActivity(highIntent);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mainMusic.stop();
     }
 }

@@ -30,6 +30,7 @@ public class Round extends GlobalSettingsActivity {
         current_time = 30000;
         score_intent = new Intent(this, Score.class);
         time_display = (TextView) findViewById(R.id.count_down_text_round);
+        time_display.setTypeface(type);
         goal_color = generateColor();
 
         ImageView image = (ImageView) findViewById(R.id.goal_color);
