@@ -48,6 +48,7 @@ public class FinalScore extends GlobalSettingsActivity {
     }
 
     public void dispatchMainActivity(View view){
+        MainActivity.mainMusic.stop();
         Intent mainIntent = new Intent(this, MainActivity.class);
         startActivity(mainIntent);
     }
