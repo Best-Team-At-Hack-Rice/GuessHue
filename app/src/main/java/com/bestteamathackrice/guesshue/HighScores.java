@@ -71,7 +71,10 @@ public class HighScores extends GlobalSettingsActivity {
         // Player scores are stored as strings in the format "jfk 1234"
         SharedPreferences scorePrefs = getSharedPreferences(MainActivity.GAME_PREFS, 0);
         Set<String> highScoresSet = scorePrefs.getStringSet("highScores", null);
-        ArrayList<String> highScoresArray = new ArrayList<>(highScoresSet);
+        ArrayList<String> highScoresArray = new ArrayList<>();
+        if (highScoresSet != null) {
+            highScoresArray = new ArrayList<>(highScoresSet);
+        }
         // The first element of the array is the names of the high scorers in descending order of
         // score, and the second is the scores
         String[] highScoresStrings = sortHighScores(highScoresArray);
