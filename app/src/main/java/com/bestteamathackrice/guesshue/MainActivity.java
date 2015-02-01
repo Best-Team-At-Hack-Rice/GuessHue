@@ -25,10 +25,6 @@ public class MainActivity extends GlobalSettingsActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences prefs = getSharedPreferences(GAME_PREFS, 0);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.clear();
-        editor.commit();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
