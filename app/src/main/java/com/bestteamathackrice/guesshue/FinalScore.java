@@ -1,9 +1,12 @@
 package com.bestteamathackrice.guesshue;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class FinalScore extends ActionBarActivity {
@@ -12,6 +15,10 @@ public class FinalScore extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_score);
+
+        TextView finalScoreDisplay = (TextView) findViewById(R.id.final_score);
+
+        finalScoreDisplay.setText(Integer.toString(DataMule.totalScore));
     }
 
 
@@ -35,5 +42,10 @@ public class FinalScore extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void dispatchMainActivity(View view){
+        Intent mainIntent = new Intent(this, MainActivity.class);
+        startActivity(mainIntent);
     }
 }

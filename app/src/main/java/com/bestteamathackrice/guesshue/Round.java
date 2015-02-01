@@ -42,11 +42,17 @@ public class Round extends ActionBarActivity {
 
             public void onFinish() {
                 time_display.setText("done!");
+                DataMule.totalRound +=1;
+                score_intent.putExtra("round_score", 0);
                 startActivity(score_intent);
             }
 
         }.start();
 
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 
     @Override
@@ -79,6 +85,7 @@ public class Round extends ActionBarActivity {
     }
 
     public void dispatchApprovalActivity(View view) {
+        countdown.cancel();
         Intent intent = new Intent(this, Approval.class);
         intent.putExtra("time_left", current_time);
         startActivity(intent);

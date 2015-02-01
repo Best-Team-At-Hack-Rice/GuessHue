@@ -48,7 +48,6 @@ public class Approval extends ActionBarActivity {
     }
 
     private long current_time;
-    private Intent score_intent;
     private TextView time_display;
     private CountDownTimer countdown;
 
@@ -58,7 +57,6 @@ public class Approval extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_approval);
 
-        score_intent = new Intent(this, Score.class);
         time_display = (TextView) findViewById(R.id.count_down_text_approval);
 
         current_time = (long) getIntent().getExtras().get("time_left");
@@ -78,7 +76,8 @@ public class Approval extends ActionBarActivity {
 
             public void onFinish() {
                 time_display.setText("done!");
-                startActivity(score_intent);
+                DataMule.totalRound += 1;
+                dispatchScoreHoldingIntent(0);
             }
 
         }.start();
@@ -194,14 +193,17 @@ public class Approval extends ActionBarActivity {
     }
 
     public void goToScore(View view) {
+        countdown.cancel();
+
         int score = getScore(actualColor, goalColor);
+        DataMule.totalRound +=1;
+        DataMule.totalScore +=score;
         dispatchScoreHoldingIntent(score);
     }
 
     private void dispatchScoreHoldingIntent(int score) {
-//        Intent scoreHoldingIntent = new Intent();
-//        if (scoreHoldingIntent.resolveActivity(getPackageManager()) != null) {
-//
-//        }
+        Intent scoreHoldingIntent = new Intent(this, Score.class);
+        scoreHoldingIntent.putExtra("round_score", score);
+        startActivity(scoreHoldingIntent);
     }
 }
