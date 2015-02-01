@@ -14,13 +14,18 @@ import android.widget.TextView;
 import java.util.Random;
 import java.util.Timer;
 
-
+/**
+ * Activity for each round of the game. Displays the given color.
+ */
 public class Round extends GlobalSettingsActivity {
-
     private int goal_color;
+
     private long current_time;
+
     private Intent score_intent;
+
     private TextView time_display;
+
     private CountDownTimer countdown;
 
     @Override

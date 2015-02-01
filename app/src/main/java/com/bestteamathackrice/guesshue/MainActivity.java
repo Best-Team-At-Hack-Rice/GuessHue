@@ -14,7 +14,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends GlobalSettingsActivity {
-
     public static final String GAME_PREFS = "GuessHuePrefs";
     static MediaPlayer mainMusic;
 
@@ -22,12 +21,16 @@ public class MainActivity extends GlobalSettingsActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
         mainMusic = MediaPlayer.create(MainActivity.this, R.raw.main_music);
         mainMusic.setLooping(true);
         mainMusic.start();
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
-    }
-
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
