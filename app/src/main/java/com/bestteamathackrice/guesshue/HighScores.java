@@ -67,12 +67,13 @@ public class HighScores extends GlobalSettingsActivity {
     @Override
     public void onResume() {
         super.onResume();
-        TextView scoreView = (TextView)findViewById(R.id.high_scores_list);
+        TextView scoreView = (TextView)findViewById(R.id.high_scores_value_list);
+        TextView nameView = (TextView)findViewById(R.id.high_scores_name_list);
         scoreView.setTypeface(type);
-        displayHighScores(scoreView);
+        displayHighScores(nameView, scoreView);
     }
 
-    public void displayHighScores(TextView scoreView) {
+    public void displayHighScores(TextView nameView, TextView scoreView) {
         // Player scores are stored as strings in the format "jfk 1234"
         SharedPreferences scorePrefs = getSharedPreferences(MainActivity.GAME_PREFS, 0);
         Set<String> highScoresSet = scorePrefs.getStringSet("highScores", null);
@@ -84,6 +85,7 @@ public class HighScores extends GlobalSettingsActivity {
         // score, and the second is the scores
         String[] highScoresStrings = sortHighScores(highScoresArray);
 
+        nameView.setText(highScoresStrings[0]);
         scoreView.setText(highScoresStrings[1]);
 
     }
